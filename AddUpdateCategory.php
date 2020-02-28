@@ -2,11 +2,15 @@
 		$responce=array();
 		//$con=mysqli_connect("localhost","root","","expense") or
 		//	die("db not connect");
+
+$con=mysqli_connect("remotemysql.com","SsLhp88JCI","5SuauyG5hL","SsLhp88JCI") or 
+				die("dbnot connect");
 			
 		header('Access-Control-Allow-Origin: *');
 	    header('Access-Control-Allow-Headers: X-Requested-With');
 	    header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 		
+
 		$data= file_get_contents("php://input");
 		$json_obj = json_decode($data);
 		$name=$json_obj->Name;
