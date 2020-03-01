@@ -14,6 +14,8 @@
 		$json_obj = json_decode($data);
 		$UserName=$json_obj->UserName;
 		$Password=$json_obj->Password;
+
+		$pass = sha1(sha1($Password).sha1("mySalt@$#(%"));
 		
 	
 		
@@ -24,7 +26,7 @@
 				$responce['success']=1;
 				$responce['message']="User Does not exists";	
 		} else {
-			$result = mysqli_query($con,"SELECT * FROM users WHERE MobileNo = '".$UserName."' and Password='".$Password."'");
+			$result = mysqli_query($con,"SELECT * FROM users WHERE MobileNo = '".$UserName."' and Password='".$pass."'");
 			if(mysqli_num_rows($result)==0) 
 			{
 				$responce['success']=1;
