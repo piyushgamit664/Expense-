@@ -24,11 +24,12 @@
 		$Status=$json_obj->Status;
 		$CreatedBy=$json_obj->CreatedBy;
 		
+		
 
 		if($UserId==0)
 		{
 			$query="insert into users(FirstName,MiddleName,LastName,Address,Gender,MobileNo,Password,Status,CreatedOn,CreatedBy) 
-					values('".$FirstName."','".$MiddleName."','".$LastName."','".$Address."','".$Gender."','".$MobileNo."','".$Password."','".$Status."',now(),'".$CreatedBy."')";
+					values('".$FirstName."','".$MiddleName."','".$LastName."','".$Address."','".$Gender."','".$MobileNo."',PASSWORD('".$Password."'),'".$Status."',now(),'".$CreatedBy."')";
 			$res=mysqli_query($con,$query);
 		}else{
 			
