@@ -24,12 +24,12 @@
 		$Status=$json_obj->Status;
 		$CreatedBy=$json_obj->CreatedBy;
 		
-		
+		$pass = sha1(sha1($Password).sha1("mySalt@$#(%"));
 
 		if($UserId==0)
 		{
 			$query="insert into users(FirstName,MiddleName,LastName,Address,Gender,MobileNo,Password,Status,CreatedOn,CreatedBy) 
-					values('".$FirstName."','".$MiddleName."','".$LastName."','".$Address."','".$Gender."','".$MobileNo."',PASSWORD('".$Password."'),'".$Status."',now(),'".$CreatedBy."')";
+					values('".$FirstName."','".$MiddleName."','".$LastName."','".$Address."','".$Gender."','".$MobileNo."','".$pass."','".$Status."',now(),'".$CreatedBy."')";
 			$res=mysqli_query($con,$query);
 		}else{
 			
