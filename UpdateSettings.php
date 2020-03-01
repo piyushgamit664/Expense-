@@ -16,7 +16,7 @@
 		$UserId=$json_obj->UserId;;
 
 	
-		$query="update users  set Theme='".$Theme."' where UserId=".$UserId;
+		$query="update users  set Theme=".$Theme." where UserId=".$UserId;
 		$res = mysqli_query($con,$query);
        
 		if($res>0)
