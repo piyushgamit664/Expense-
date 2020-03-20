@@ -16,7 +16,7 @@
 		$UserId=$json_obj->UserId;
 		
 		$responce['rec']=array();
-		$q="SELECT YEAR(Date) as Year, MONTH(Date) as Month, sum(Amount) as TotalAmount
+		$q="SELECT YEAR(Date) as Year, MONTH(Date) as Month, Amount
 			FROM
 			incomeexpense
 			where UserId='".$UserId."';
