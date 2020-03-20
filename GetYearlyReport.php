@@ -19,8 +19,8 @@
 		$q="SELECT YEAR(Date) as Year, sum(Amount) as TotalAmount
 			FROM
 			incomeexpense
-			where UserId='".$UserId."'
-			GROUP BY YEAR(Date) DESC";
+			where UserId='".$UserId."';
+			//GROUP BY YEAR(Date) DESC";
 			
 		$res=mysqli_query($con,$q);
 		while($row=mysqli_fetch_array($res)){
